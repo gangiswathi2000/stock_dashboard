@@ -123,16 +123,16 @@ function StockPriceTable() {
           <input
             type="text"
             placeholder="Search symbol"
-            className="border border-gray-300 rounded-lg p-2 w-1/3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="border border-gray-300 rounded-lg p-2 w-1/4 focus:outline-none focus:ring-2 focus:ring-blue-400"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           {searchTerm && (
             <button
               onClick={() => setSearchTerm('')}
-              className="ml-4 px-4 py-2 bg-red-400 text-white rounded-lg hover:bg-red-500 transition"
+              className="ml-4 px-4 py-2 bg-[#3D90D7] text-white rounded-lg hover:bg-blue-500 transition"
             >
-              Clear Search
+              X
             </button>
           )}
         </div>
@@ -142,19 +142,19 @@ function StockPriceTable() {
             <thead className="bg-blue-200 text-blue-900">
               <tr>
                 <th
-                  className="text-2xl py-4 px-6 text-left text-md font-bold cursor-pointer select-none"
+                  className="text-2xl py-2 px-2 text-center text-md font-bold cursor-pointer select-none"
                   onClick={() => handleSort('symbol')}
                 >
                   Symbol {sortColumn === 'symbol' && (sortOrder === 'asc' ? '🔼' : '🔽')}
                 </th>
                 <th
-                  className="text-2xl py-4 px-6 text-left text-md font-bold cursor-pointer select-none"
+                  className="text-2xl py-2 px-2 text-center text-md font-bold cursor-pointer select-none"
                   onClick={() => handleSort('price')}
                 >
                   Price ($) {sortColumn === 'price' && (sortOrder === 'asc' ? '🔼' : '🔽')}
                 </th>
                 <th
-                  className="text-2xl py-4 px-6 text-left text-md font-bold cursor-pointer select-none"
+                  className="text-2xl py-2 px-2 text-center text-md font-bold cursor-pointer select-none"
                   onClick={() => handleSort('percentChange')}
                 >
                   Change (%) {sortColumn === 'percentChange' && (sortOrder === 'asc' ? '🔼' : '🔽')}
